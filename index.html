@@ -5,24 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Custodeum</title>
   </head>
-  <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=960 height=600 tabindex="-1" style="width: 960px; height: 600px; background: #CCCCCC"></canvas>
+  <body style="text-align: center; padding: 0; border: 0; margin: 20px;">
+    <canvas id="unity-canvas" width=960 height=540 tabindex="-1" style="width: 960; height: 540px; background: #CCCCCC"></canvas>
     <script src="Build/Custodeum Build 7.loader.js"></script>
     <script>
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-
-        var canvas = document.querySelector("#unity-canvas");
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
-        canvas.style.position = "fixed";
-
-        document.body.style.textAlign = "left";
-      }
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/Custodeum Build 7.data",
@@ -32,9 +18,26 @@
         companyName: "Unrezonable",
         productName: "Custodeum",
         productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+        matchWebGLToCanvasSize: true,
+        devicePixelRatio: 2.0,
       });
     </script>
   </body>
+<p align="left">
+Sorry for the save not working, WebGL doesn't allow copying and pasting, so I'll have to find a workaround. You'll have to play it all in one go if you want to reach the end (that or just keep the tab open in the background for a while).
+<br><br><br>
+<b>Controls:</b>
+<br>
+  
+<br>    p - pause
+<br>    click unit - select unit
+<br>    click after clicking unit - move unit
+<br>    double click enemy while standing in range - clean enemy
+<br>    + and - or scrolling - zoom in/out
+<br>    WASD/Arrow keys - move camera
+<br>    Left shift - toggle enemy movement range highlight
+<br>    Right shift - hold enemy movement range highlight
+<br>    Click enemy while not selecting a janitor - toggle highlight enemy movement range highlight on that specific enemy 
+  
+</p>
 </html>
