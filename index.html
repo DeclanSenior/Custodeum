@@ -3,38 +3,97 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Custodeum</title>
+    <title>Custodeum</title>
   </head>
-  <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=960 height=600 tabindex="-1" style="width: 960px; height: 600px; background: #CCCCCC"></canvas>
-    <script src="Build/Custodeum Build 11.loader.js"></script>
-    <script>
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
+  <body style="text-align: center; padding: 0; border: 0; margin: 20px;">
 
-        var canvas = document.querySelector("#unity-canvas");
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
-        canvas.style.position = "fixed";
-
-        document.body.style.textAlign = "left";
-      }
-
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Custodeum Build 11.data",
-        frameworkUrl: "Build/Custodeum Build 11.framework.js",
-        codeUrl: "Build/Custodeum Build 11.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "Unrezonable",
-        productName: "Custodeum",
-        productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
-    </script>
-  </body>
+  <br>
+      
+      <p>
+        This game only works on computers. If you are using a mobile device, you will not be able to use a lot of the controls.<br> Scroll down for controls.
+      </p>
+      
+      <br>
+      <br>
+      
+      <canvas id="unity-canvas" width=960 height=540 tabindex="-1" style="width: 960; height: 540px; background: #CCCCCC"></canvas>
+      <script src="Build/Custodeum Build 11.loader.js"></script>
+      <script>
+  
+        createUnityInstance(document.querySelector("#unity-canvas"), {
+          dataUrl: "Build/Custodeum Build 11.data",
+          frameworkUrl: "Build/Custodeum Build 11.framework.js",
+          codeUrl: "Build/Custodeum Build 11.wasm",
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "Unrezonable",
+          productName: "Custodeum",
+          productVersion: "1.0",
+          matchWebGLToCanvasSize: true,
+          devicePixelRatio: 2.0,
+        });
+      </script>
+    </body>
+    
+  <p align="left">
+    Sorry for the save not working, WebGL doesn't allow copying and pasting, so I will have to find a workaround. You'll have to play it all in one go if you want to reach the end (that or just keep the tab open in the background for a while).
+    <br><br>
+    If any game-breaking bugs occur, sorry lol.
+    
+    <br><br><br> 
+    <b>Text Tutorial:</b>
+    <br><br>
+      The game is split into two phases: player phase and enemy phase. In player phase, each janitor is given a chance to move and potentially start cleaning a mess. To do so:
+      <br>
+      <ol type="1" align="left">
+      <li>Select a janitor by hovering over it and clicking.</li>
+      <li>After selecting a janitor, click another square within the blue highlighted area to move janitor to that location.</li>
+      <li>Double click an enemy in range of janitor to engage cleaning (range can be seen in stats panel).</li>
+      <li>If you do not plan on cleaning an enemy, click the janitor again after moving to end its turn early.</li>
+      <li>Right click or click outside movment range to cancel selection.</li>
+    </ol>  
+      <br>
+      <p align="left">
+      During enemy phase, each enemy can move and potentially target a janitor. After all enemies have moved, return to player phase.
+      </p>
+      
+    <br><br><br>
+    <b>Controls:</b>
+    <br>
+    
+    <p align="left">
+      
+      <br>    p - pause
+      <br><br>    click unit - select unit
+      <br><br>    click after clicking unit - move unit
+      <br><br>    double click enemy while standing in range - clean enemy
+      <br><br>    click outside movement and cleaning range or right click - deselect janitor
+      <br><br>    click janitor after moving - deselect janitor
+      <br><br>    +/- or scrolling - zoom in/out
+      <br><br>    WASD/Arrow keys - move camera
+      <br><br>    Left shift - toggle enemy movement range highlight
+      <br><br>    Right shift - hold enemy movement range highlight
+    
+    </p>
+    
+      <br><br><br>
+    <b>Sound Credits:</b>
+    <br><br>
+    
+    <p align="left">
+      
+    Sword sheath v2 by ScouseMouseJB -- https://freesound.org/s/328157/ -- License: Attribution 4.0
+    <br><br>
+    BBRS_SFX_MenuItemScrolling by FairSonicStudio -- https://freesound.org/s/744322/ -- License: Attribution 4.0
+    <br><br>
+    Water spraying from a bottle 03 by Jagadamba -- https://freesound.org/s/258048/ -- License: Attribution 4.0
+    <br><br>
+    Perfume Spray 3 by theplax -- https://freesound.org/s/545194/ -- License: Attribution 4.0
+    <br><br>
+    Level Up 02 by rhodesmas -- https://freesound.org/s/320654/ -- License: Attribution 3.0
+    <br><br>
+    UI 03 by rhodesmas -- https://freesound.org/s/380292/ -- License: Attribution 3.0
+    
+    </p>
+    
+  </p>
 </html>
